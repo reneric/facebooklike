@@ -12,7 +12,7 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem "possessive" 
 gem 'chronic'
-gem 'koala'
+#gem 'koala'
 gem "combined_time_select", "~> 0.0.1"
 gem 'xml-simple'
 gem 'activeresource'
