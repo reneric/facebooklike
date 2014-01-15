@@ -196,14 +196,6 @@
 			}
 		},
 		{
-			"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/Gemfile",
-			"settings":
-			{
-				"buffer_size": 1908,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/javascripts/pages.js.coffee.erb",
 			"settings":
 			{
@@ -456,6 +448,7 @@
 	},
 	"file_history":
 	[
+		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/Gemfile",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/javascripts/application.js",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/controllers/application_controller.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/config/initializers/omniauth.rb",
@@ -468,7 +461,6 @@
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/db/seeds.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/db/schema.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/config/routes.rb",
-		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/Gemfile",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/models/user.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/tmp/cache/assets/development/sass/43f7aa2a43f43751abe9d1977e05db93916cc2bc/application.css.scssc",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/stylesheets/application.css.scss",
@@ -763,8 +755,8 @@
 						"selection":
 						[
 							[
-								798,
-								798
+								740,
+								740
 							]
 						],
 						"settings":
@@ -816,10 +808,12 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/jQuery/Syntaxes/jQueryJavaScript.tmLanguage"
+							"syntax": "Packages/jQuery/Syntaxes/jQueryJavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 87.0,
+						"translation.y": 152.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -827,81 +821,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/Gemfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1908,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								331,
-								331
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close"
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/javascripts/pages.js.coffee.erb",
 					"semi_transient": false,
 					"settings":
@@ -972,11 +891,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/controllers/pages_controller.rb",
 					"semi_transient": false,
 					"settings":
@@ -1047,11 +966,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/helpers/pages_helper.rb",
 					"semi_transient": false,
 					"settings":
@@ -1122,11 +1041,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/views/pages/home.html.erb",
 					"semi_transient": false,
 					"settings":
@@ -1197,11 +1116,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/models/user.rb",
 					"semi_transient": false,
 					"settings":
@@ -1274,11 +1193,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/stylesheets/application.css.scss",
 					"semi_transient": false,
 					"settings":
@@ -1349,11 +1268,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/config/environments/development.rb",
 					"semi_transient": false,
 					"settings":
@@ -1426,7 +1345,7 @@
 						"translation.y": 16.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -2012,7 +1931,7 @@
 		[
 			[
 				"",
-				"~/Desktop/Development/Projects/sigma_new/sigma.sublime-project"
+				"~/Desktop/Development/Projects/BigFish/bigfish.sublime-project"
 			]
 		],
 		"width": 380.0
