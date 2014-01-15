@@ -223,7 +223,7 @@
 			"file": "/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/views/pages/home.html.erb",
 			"settings":
 			{
-				"buffer_size": 81,
+				"buffer_size": 75,
 				"line_ending": "Unix"
 			}
 		},
@@ -448,12 +448,12 @@
 	},
 	"file_history":
 	[
+		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/views/layouts/application.html.erb",
+		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/controllers/application_controller.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/Gemfile",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/assets/javascripts/application.js",
-		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/controllers/application_controller.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/config/initializers/omniauth.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/controllers/sessions_controller.rb",
-		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/app/views/layouts/application.html.erb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/config/environments/production.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/spec/helpers/sessions_helper_spec.rb",
 		"/Users/rsimmons/Desktop/Development/Projects/facebooklike/spec/controllers/sessions_controller_spec.rb",
@@ -593,6 +593,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Welcome",
+			"strong",
 			"alert",
 			"not_authorized",
 			"connected",
@@ -718,9 +720,7 @@
 			"add",
 			"event_title",
 			"png",
-			"source",
-			"container",
-			"background-image"
+			"source"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -739,7 +739,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -816,7 +816,7 @@
 						"translation.y": 152.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -891,7 +891,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1050,15 +1050,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 81,
+						"buffer_size": 75,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								72
+								70,
+								70
 							]
 						],
 						"settings":
@@ -1070,30 +1070,6 @@
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -1102,10 +1078,34 @@
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
-								"bh_unmatched_close"
+								"bh_unmatched_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
 							],
 							"incomplete_sync": null,
 							"remote_loading": false,
@@ -1116,7 +1116,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1410,6 +1410,14 @@
 		"selected_items":
 		[
 			[
+				"appht",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"home",
+				"app/views/pages/home.html.erb"
+			],
+			[
 				"gem",
 				"Gemfile"
 			],
@@ -1444,10 +1452,6 @@
 			[
 				"user.",
 				"app/models/user.rb"
-			],
-			[
-				"appht",
-				"app/views/layouts/application.html.erb"
 			],
 			[
 				"route",
@@ -1916,10 +1920,6 @@
 			[
 				"styl",
 				"style.css"
-			],
-			[
-				"content-pa",
-				"content-page.php"
 			]
 		],
 		"width": 0.0
@@ -1929,6 +1929,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"big",
+				"~/Desktop/Development/Projects/BigFish/bigfish.sublime-project"
+			],
 			[
 				"",
 				"~/Desktop/Development/Projects/BigFish/bigfish.sublime-project"
