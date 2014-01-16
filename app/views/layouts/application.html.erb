@@ -15,6 +15,74 @@
   <%= stylesheet_link_tag "application","//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+
+  (function() {
+  jQuery(function() {
+    // $('body').prepend('<div id="fb-root"></div>');
+    return $.ajax({
+      url: "https://connect.facebook.net/en_US/all.js",
+      dataType: 'script',
+      cache: true
+    });
+  });
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '125644104300196',
+      cookie: true,
+      xfbml: true,
+      status: true
+    });
+    FB.Event.subscribe("auth.authResponseChange", function(response) {
+      FB.XFBML.parse();
+      alert(response);
+      return FB.getLoginStatus(function(response) {
+        return console.log(response.status);
+      });
+    });
+    FB.Event.subscribe("edge.create", function(response) {
+      if (response) {
+        return alert('got it');
+      }
+    });
+    $('#sign_in').click(function(e) {
+      e.preventDefault();
+      return FB.login(function(response) {
+        if (response.status = 'connected') {
+          if (response.authResponse) {
+            window.location = '/auth/facebook/callback';
+          }
+          FB.api("/me", function(response) {
+            return console.log(response.name);
+          });
+          return FB.api('me/likes/223083117703325', function(response) {
+            if (response.data.length === 1) {
+
+            } else {
+              $('#user-widget').html('<div class="fb-like" data-href="https://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
+              // FB.XFBML.parse(document.getElementById('fb-root'));
+              FB.XFBML.parse();
+              // return FB.XFBML.parse(document.getElementById('user-widget'));
+            }
+          });
+        }
+      });
+    });
+    return $('#sign_out').click(function(e) {
+      FB.getLoginStatus(function(response) {
+        if (response.authResponse) {
+          return FB.logout();
+        }
+      });
+      return true;
+    });
+  };
+
+}).call(this);
+
+</script>
 <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -51,7 +119,8 @@
     Welcome <strong><%= current_user.name %></strong>!
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"  %>
+    <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"  %>
+    <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
     <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" , remote: true %>
   <% end %>
 </div>

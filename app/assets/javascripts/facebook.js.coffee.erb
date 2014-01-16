@@ -1,15 +1,16 @@
 jQuery ->
   $('body').prepend('<div id="fb-root"></div>')
-
   $.ajax
     url: "#{window.location.protocol}//connect.facebook.net/en_US/all.js"
     dataType: 'script'
     cache: true
+  
 
 
 window.fbAsyncInit = ->
-  FB.init(appId: '125644104300196', cookie: true, status: true,  xfbml: true)
-  FB.Event.subscribe "auth.statusChange", (response) ->
+  FB.init(appId: '125644104300196', status: true, cookie: true, xfbml: true)
+  FB.Event.subscribe "auth.authResponseChange", (response) ->
+    alert response
     FB.getLoginStatus (response) ->
       console.log response.status
   FB.Event.subscribe "edge.create", (response) ->
@@ -35,3 +36,5 @@ window.fbAsyncInit = ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
     true
+
+
