@@ -14,11 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-    // FB.api('/me/likes/732717630073202', {limit: 1}, function(r) { 
-    //     if (r.data.length == 1) {
-    //         console.log('i like this')
-    //     } else {
-    //         console.log('i dont like this')
-    //     }
-    // });

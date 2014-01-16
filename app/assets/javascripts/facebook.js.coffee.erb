@@ -1,0 +1,31 @@
+jQuery ->
+  $('body').prepend('<div id="fb-root"></div>')
+
+  $.ajax
+    url: "#{window.location.protocol}//connect.facebook.net/en_US/all.js"
+    dataType: 'script'
+    cache: true
+
+
+window.fbAsyncInit = ->
+  FB.init(appId: '125644104300196', cookie: true, status: true,  xfbml: true)
+  FB.getLoginStatus (response) ->
+    alert response.status
+  FB.Event.subscribe "edge.create", (response) ->
+    alert 'got it' if response
+
+  $('#sign_in').click (e) ->
+    e.preventDefault()
+    FB.login (response) ->
+      FB.api 'me/likes/223083117703325', (response) ->
+        if response.data.length == 1
+          window.location = '/auth/facebook/callback' if response.authResponse
+        else
+          $('#user-widget').html('<fb:like href="https://www.facebook.com/BaconSocialMedia" width="300" layout="button_count" action="like" show_faces="false" share="false"></fb:like>')
+          FB.XFBML.parse(document.getElementById('fb-root'))
+          FB.XFBML.parse(document.getElementById('user-widget'))
+
+  $('#sign_out').click (e) ->
+    FB.getLoginStatus (response) ->
+      FB.logout() if response.authResponse
+    true
