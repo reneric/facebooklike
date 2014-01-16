@@ -33,10 +33,21 @@
       appId: '125644104300196',
       channelUrl : '//localhost:3000/channel.html',
       cookie: true,
-      xfbml: true,
+      xfbml: false,
       status: true,
       oauth: true
     });
+    FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    console.log(response.status)
+  } else if (response.status === 'not_authorized') {
+    console.log(response.status)
+  } else {
+    console.log(response.status)
+  }
+ },true);
     FB.Event.subscribe("auth.authResponseChange", function(response) {
       // FB.XFBML.parse();
       return FB.getLoginStatus(function(response) {
@@ -56,6 +67,7 @@
               //window.location = '/auth/facebook/callback';
               alert(response.data.length)
             } else {
+              window.location = '/auth/facebook/callback';
               $('#user-widget').html('<div class="fb-like" data-href="http://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
               // FB.XFBML.parse(document.getElementById('fb-root'));
               FB.XFBML.parse();
@@ -123,7 +135,7 @@
   <% else %>
     <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"  %>
     
-    <%= link_to "Sign in with Facebook", "/", id: "sign_in" , remote: true %>
+    <%= link_to "Sign in with Facebook", "/", id: "sign_in"  %>
   <% end %>
 </div>
 			<%= yield %>
