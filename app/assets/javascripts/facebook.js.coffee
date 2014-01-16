@@ -7,14 +7,7 @@ jQuery ->
   window.fbAsyncInit = ->
   	FB.init(appId: '125644104300196', cookie: true)
   	FB.Event.subscribe 'edge.create', (href, widget) ->
-  		alert href
-  	FB.Event.subscribe 'auth.statusChange', (response) ->
-  		if response.status == "connected"
-  			console.log "connected"
-  		else if response.status == "not_authorized"
-  			console.log "not_authorized"
-  		else
-  			console.log "Not logged in"
+  		alert 'success'
 
   $.ajax
     url: "#{window.location.protocol}//connect.facebook.net/en_US/all.js"
@@ -33,9 +26,8 @@ jQuery ->
       		if fbdata.data.length == 1
       			window.location = '/auth/facebook/callback' if response.authResponse
       		else
-      			$('#user-widget').html('<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FBaconSocialMedia&amp;width=100px&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=125644104300196" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100pxpx; height:21px;" allowTransparency="true"></iframe>')
+      			$('#user-widget').html('<fb:like href="https://www.facebook.com/BaconSocialMedia" width="300" layout="button_count" action="like" show_faces="false" share="false"></fb:like>');
       
-
   $('#sign_out').click (e) ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
