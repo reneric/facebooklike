@@ -31,43 +31,39 @@
   window.fbAsyncInit = function() {
     FB.init({
       appId: '125644104300196',
+      channelUrl : '//localhost:3000/channel.html',
       cookie: true,
       xfbml: true,
-      status: true
+      status: true,
+      oauth: true
     });
     FB.Event.subscribe("auth.authResponseChange", function(response) {
-      FB.XFBML.parse();
-      alert(response);
+      // FB.XFBML.parse();
       return FB.getLoginStatus(function(response) {
         return console.log(response.status);
+        return false;
       });
     });
     FB.Event.subscribe("edge.create", function(response) {
-      if (response) {
         return alert('got it');
-      }
     });
     $('#sign_in').click(function(e) {
       e.preventDefault();
       return FB.login(function(response) {
         if (response.status = 'connected') {
-          if (response.authResponse) {
-            window.location = '/auth/facebook/callback';
-          }
-          FB.api("/me", function(response) {
-            return console.log(response.name);
-          });
-          return FB.api('me/likes/223083117703325', function(response) {
+            FB.api('me/likes/223083117703325', function(response) {
             if (response.data.length === 1) {
-
+              //window.location = '/auth/facebook/callback';
+              alert(response.data.length)
             } else {
-              $('#user-widget').html('<div class="fb-like" data-href="https://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
+              $('#user-widget').html('<div class="fb-like" data-href="http://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
               // FB.XFBML.parse(document.getElementById('fb-root'));
               FB.XFBML.parse();
               // return FB.XFBML.parse(document.getElementById('user-widget'));
             }
           });
-        }
+            
+          }
       });
     });
     return $('#sign_out').click(function(e) {
@@ -79,7 +75,13 @@
       return true;
     });
   };
-
+// Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     d.getElementsByTagName('head')[0].appendChild(js);
+   }(document));
 }).call(this);
 
 </script>
@@ -120,8 +122,8 @@
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
     <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"  %>
-    <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
-    <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" , remote: true %>
+    
+    <%= link_to "Sign in with Facebook", "/", id: "sign_in" , remote: true %>
   <% end %>
 </div>
 			<%= yield %>
