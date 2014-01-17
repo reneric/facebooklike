@@ -11,7 +11,7 @@ window.fbAsyncInit = ->
   FB.Event.subscribe "edge.create", (response) ->
     window.location = '/liked' if response
 
-  $('#sign_out').click (e) ->
+  $('#sign_out').click () ->
     FB.getLoginStatus (response) ->
       FB.logout() if response.authResponse
     true
