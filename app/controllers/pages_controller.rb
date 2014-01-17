@@ -28,7 +28,7 @@ def authorized
 			session[:user_id] = @me["id"]
 			user = User.where(:id => session[:user_id])
 			unless user.exists?
-				User.create(name: @me["name"], id: session[:user_id])
+				User.create(name: @me["name"], uid: session[:user_id])
 			end
 		end
 		@graph_data = @api.get_object("/me/likes/223083117703325")
