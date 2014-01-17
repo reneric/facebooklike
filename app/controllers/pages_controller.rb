@@ -26,7 +26,7 @@ def authorized
 
 		unless @me.nil?
 			session[:user_id] = @me["id"]
-			user = User.where(:id => session[:user_id])
+			user = User.where(:uid => session[:user_id])
 			unless user.exists?
 				User.create(name: @me["name"], uid: session[:user_id])
 			end
