@@ -17,7 +17,8 @@ require 'net/http'
 	 if session[:name]
 	 	@name = session[:name]
 	 else
-	 	@name = "unknown"
+	 	@name = "User"
+	 end
   end
 
 def authorized

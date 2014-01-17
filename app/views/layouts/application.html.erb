@@ -51,7 +51,7 @@
 		<div class="container">
 		<div id="user-widget">
   <% if current_user %>
-    Welcome <strong><%= current_user.name %></strong>!
+    Welcome <strong><%= @name %></strong>!
     <% if @status == 'authorized' %>
     <p>Congrats! Complete the form!</p>
     <% else %>
