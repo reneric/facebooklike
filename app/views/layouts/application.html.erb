@@ -15,7 +15,7 @@
   <%= stylesheet_link_tag "application","//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" %>
 </head>
 <body>
-<div id="fb-root"></div>
+<!-- <div id="fb-root"></div> -->
 
 <script type="text/javascript">
 // $(document).ready(function() {
@@ -69,72 +69,83 @@
 </script>
 <script>
 
-//   (function() {
-//   jQuery(function() {
-//     $('body').prepend('<div id="fb-root"></div>');
-//     return $.ajax({
-//       url: "https://connect.facebook.net/en_US/all.js",
-//       dataType: 'script',
-//       cache: true
-//     });
-//   });
+ //  (function() {
+ //  jQuery(function() {
+ //    $('body').prepend('<div id="fb-root"></div>');
+ //    return $.ajax({
+ //      url: "https://connect.facebook.net/en_US/all.js",
+ //      dataType: 'script',
+ //      cache: true
+ //    });
+ //  });
 
-//   window.fbAsyncInit = function() {
-//     FB.init({
-//       appId: '125644104300196',
-//       // channelUrl: 'http://icodethings.com/channel.html',
-//       cookie: true,
-//       xfbml: false,
-//       status: true,
-//       oauth: true
-//     });
-//     FB.getLoginStatus(function(response) {
-//   if (response.status === 'connected') {
-//     console.log(response.status)
-//   } else if (response.status === 'not_authorized') {
-//     console.log(response.status)
-//   } else {
-//     // console.log(response.status)
-//   }
-//  },true);
-//     FB.Event.subscribe("auth.authResponseChange", function(response) {
-//       // FB.XFBML.parse();
-//       return FB.getLoginStatus(function(response) {
-//         // return console.log(response.status);
-//         return false;
-//       }, true);
-//     });
-//     FB.Event.subscribe("edge.create", function(response) {
-//         return alert('got it');
-//     });
-//     $('#sign_in').click(function(e) {
-//       e.preventDefault();
-//       return FB.login(function(response) {
-//         if (response.status = 'connected') {
-//             FB.api('me/likes/223083117703325', function(response) {
-//             if (response.data.length === 1) {
-//               //window.location = '/auth/facebook/callback';
-//               alert(response.data.length)
-//             } else {
-//               // window.location = '/auth/facebook/callback';
-//               $('#user-widget').html('<div class="fb-like" data-href="http://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
-//               // FB.XFBML.parse(document.getElementById('fb-root'));
-//               FB.XFBML.parse();
-//               // return FB.XFBML.parse(document.getElementById('user-widget'));
-//             }
-//           });
+ //  window.fbAsyncInit = function() {
+ //    FB.init({
+ //      appId: '125644104300196',
+ //      channelUrl: 'http://icodethings.com/channel.html',
+ //      cookie: true,
+ //      xfbml: false,
+ //      status: true,
+ //      oauth: true
+ //    });
+ //    FB.getLoginStatus(function(response) {
+ //      if (response.status === 'connected') {
+ //        console.log(response.status)
+ //        FB.api('me/likes/223083117703325', function(response) {
+ //            if (response.data.length === 1) {
+ //                window.location = '/auth/facebook/callback';
+ //            } else {
+ //              // window.location = '/auth/facebook/callback';
+ //              $('#user-widget').html('<div class="fb-like" data-href="http://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
+ //              // FB.XFBML.parse(document.getElementById('fb-root'));
+ //              FB.XFBML.parse();
+ //              // return FB.XFBML.parse(document.getElementById('user-widget'));
+ //            }
+ //          });
+ //      } else if (response.status === 'not_authorized') {
+        
+ //      } else {
+        
+ //      }
+ // });
+    // FB.Event.subscribe("auth.authResponseChange", function(response) {
+    //   // FB.XFBML.parse();
+    //   return FB.getLoginStatus(function(response) {
+    //     // return console.log(response.status);
+    //     return false;
+    //   }, true);
+    // });
+    // FB.Event.subscribe("edge.create", function(response) {
+    //     return alert('got it');
+    // });
+    // $('#sign_in').click(function(e) {
+    //   e.preventDefault();
+    //   return FB.login(function(response) {
+    //     if (response.status = 'connected') {
+    //         FB.api('me/likes/223083117703325', function(response) {
+    //         if (response.data.length === 1) {
+    //           //window.location = '/auth/facebook/callback';
+    //           alert(response.data.length)
+    //         } else {
+    //           // window.location = '/auth/facebook/callback';
+    //           $('#user-widget').html('<div class="fb-like" data-href="http://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
+    //           // FB.XFBML.parse(document.getElementById('fb-root'));
+    //           FB.XFBML.parse();
+    //           // return FB.XFBML.parse(document.getElementById('user-widget'));
+    //         }
+    //       });
             
-//           }
-//       });
-//     });
-//     return $('#sign_out').click(function(e) {
-//       FB.getLoginStatus(function(response) {
-//         if (response.authResponse) {
-//           return FB.logout();
-//         }
-//       });
-//       return true;
-//     });
+    //       }
+    //   });
+    // });
+    // return $('#sign_out').click(function(e) {
+    //   FB.getLoginStatus(function(response) {
+    //     if (response.authResponse) {
+    //       return FB.logout();
+    //     }
+    //   });
+    //   return true;
+    // });
 //   };
 
 // }).call(this);
@@ -180,16 +191,16 @@
 		<div id="user-widget">
   <% if current_user %>
     Welcome <strong><%= current_user.name %></strong>!
-    <% unless session[:liked].nil? %>
+    <% if @status == 'authorized' %>
     <p>Congrats! Complete the form!</p>
     <% else %>
     <p>You must first like this page!</p>
-    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FBaconSocialMedia&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=125644104300196" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+    <div class="fb-like" data-href="https://www.facebook.com/BaconSocialMedia" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
     <% end %>
     <%= link_to "Sign out", signout_path, id: "sign_out" %>
   <% else %>
     <%#= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"  %>
-    <%= link_to 'Sign in with Facebook', @auth_url, :class=>"button"%>
+    <%= link_to 'Sign in with Facebook', @auth_url, :class=>"button" %>
     <%#= link_to "Sign in with Facebook", "/", id: "sign_in" , remote: true %>
   <% end %>
 </div>
