@@ -14,6 +14,10 @@ require 'net/http'
 	 else
 	 	@status = "unknown"
 	 end
+	 if session[:name]
+	 	@name = session[:name]
+	 else
+	 	@name = "unknown"
   end
 
 def authorized
@@ -43,6 +47,8 @@ def authorized
 	 format.html {   }
 	 format.js		 
 	end
+	session[:name] = @me["name"]
+	@name = session[:name]
 end
 
 def gated
