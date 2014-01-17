@@ -36,8 +36,8 @@ def authorized
 				User.create(name: @me["name"], uid: session[:user_id])
 			end
 		end
-		@graph_data = @api.get_object("/me/likes/167192473340744")
-		# @graph_data = @api.get_object("/me/likes/223083117703325")
+		# @graph_data = @api.get_object("/me/likes/167192473340744") # K2 Coolers
+		@graph_data = @api.get_object("/me/likes/223083117703325") # BaconSocialMedia
 		if @graph_data.length == 1
 			session[:status] = "authorized"
 		else
